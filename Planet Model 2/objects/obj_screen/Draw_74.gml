@@ -1,3 +1,4 @@
+/*
 shader_set( shd_fxaa );
 	
 	var _texture = surface_get_texture( application_surface );
@@ -6,3 +7,6 @@ shader_set( shd_fxaa );
 	draw_surface_ext( application_surface, 0, 0, 1, 1, 0, c_white, 1 );
 	
 shader_reset();
+*/
+
+draw_surface_ext( application_surface, 0, 0, 1, 1, 0, c_white, 1 );
