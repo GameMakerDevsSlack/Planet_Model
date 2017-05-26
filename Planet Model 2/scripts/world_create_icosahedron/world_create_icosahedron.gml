@@ -62,11 +62,11 @@ for( var _i = 0; _i < 5; _i++ ) { //Construct bottom faces, 15 -> 19
     var _my_i = _i + 5;
     var _next_i = ( ( _i + 1 ) mod 5 ) + 5;
     world_tri_add( _vertex_x[_next_i], _vertex_y[_next_i], _vertex_z[_next_i],
-                 0, -world_scale, 0,
-                 _vertex_x[_my_i], _vertex_y[_my_i], _vertex_z[_my_i],
-                 noone );
+                   0, -world_scale, 0,
+                   _vertex_x[_my_i], _vertex_y[_my_i], _vertex_z[_my_i],
+                   noone );
 }
 
 //I did originally have it to that the faces were hard-coded to know where each other were
 //That made this entire script horrible to read - this acted as a test of force_assign_face_neighbours() anyway
-for( var _i = 0; _i < 20; _i++ ) world_tri_force_neighbours( world_tri_get_grid(), _i );
+for( var _i = 0; _i < 20; _i++ ) world_tri_force_neighbours( _i );

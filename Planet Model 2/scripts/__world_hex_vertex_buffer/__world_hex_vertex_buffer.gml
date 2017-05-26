@@ -6,7 +6,8 @@ var _count = world_tri_grid_a_count;
 
 for( var _i = 0; _i < _count; _i++ ) {
     
-    var _colour = make_colour_random();
+    var _hex = _grid[# _i, world_tri.hex ];
+	var _colour = make_colour_hsv( 240*_hex/world_max_hexes, 240, 240 );
 	
     var _ax = _grid[# _i, world_tri.a_x ];
     var _ay = _grid[# _i, world_tri.a_y ];

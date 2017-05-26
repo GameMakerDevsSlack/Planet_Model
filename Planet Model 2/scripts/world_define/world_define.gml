@@ -9,17 +9,22 @@ enum world_tri { a_x, a_y, a_z,
 				 o_x, o_y, o_z,
 				 parent, hex, size }
 				 
+enum world_hex { x, y, z,
+				 list_vx, list_vy, list_vz, list_adj,
+				 size }
 
 world_subdivisions = argument0;
 world_scale        = argument1;
 
-world_max_triangles = 20 * ( power( 3, world_subdivisions-1) + power( 3, world_subdivisions ) );
+world_max_triangles    = 20*power( 3, world_subdivisions );
+world_tri_grid_a       = ds_grid_create( world_max_triangles, world_tri.size );
+world_tri_grid_b       = ds_grid_create( world_max_triangles, world_tri.size );
+world_tri_grid_a_count = 0;
+world_tri_grid_b_count = 0;
 
-world_grid_flipflop = false;
-world_grid_a_count = 0;
-world_grid_a = ds_grid_create( world_max_triangles, world_tri.size );
-world_grid_b_count = 0;
-world_grid_b = ds_grid_create( world_max_triangles, world_tri.size );
+world_max_hexes        = 2+world_max_triangles/6;
+world_hex_grid         = ds_grid_create( world_max_hexes, world_hex.size );
+world_hex_grid_count   = 0;
 
 vertex_format_begin();
 vertex_format_add_position_3d();

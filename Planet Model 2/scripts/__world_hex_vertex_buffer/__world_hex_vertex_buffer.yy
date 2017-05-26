@@ -1,8 +1,8 @@
 {
-    "id": "ad1c0707-cae2-4bb7-a11c-26e740b5e32c",
+    "id": "fa9e4025-bc2e-40cf-95ea-90741aa4091c",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "world_tri_get_grid",
+    "name": "__world_hex_vertex_buffer",
     "IsCompatibility": false,
     "IsDnD": false
 }

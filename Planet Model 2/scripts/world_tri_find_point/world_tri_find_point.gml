@@ -4,10 +4,10 @@
 /// @param z
 /// @param current
 
-var _grid    = argument0;
-var _x       = argument1;
-var _y       = argument2;
-var _z       = argument3;
+var _x       = argument0;
+var _y       = argument1;
+var _z       = argument2;
+var _grid    = argument3;
 var _current = argument4;
 
 var _ax = _grid[# _current, world_tri.a_x ];
