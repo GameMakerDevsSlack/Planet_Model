@@ -20,3 +20,10 @@ world_grid_a_count = 0;
 world_grid_a = ds_grid_create( world_max_triangles, world_tri.size );
 world_grid_b_count = 0;
 world_grid_b = ds_grid_create( world_max_triangles, world_tri.size );
+
+vertex_format_begin();
+vertex_format_add_position_3d();
+vertex_format_add_texcoord();
+vertex_format_add_colour();
+vertex_format_add_normal();
+world_vertex_format = vertex_format_end();
