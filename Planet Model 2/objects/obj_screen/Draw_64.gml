@@ -4,7 +4,7 @@ if ( do_debug ) {
 	_str += "\n" + string( obj_world.world_subdivisions ) + " subdivisions";
 	_str += "\n" + string( obj_world.world_max_triangles ) + " triangles";
 	_str += "\n" + string( obj_world.world_max_hexes ) + " hexes";
-	_str += "\n\nWASDQE = rotate";
+	_str += "\n\nWASDQERF = rotate";
 	_str += "\n\n1 = show triangles";
 	_str += "\n2 = show hexes";
 	_str += "\n3 = show tiles";
