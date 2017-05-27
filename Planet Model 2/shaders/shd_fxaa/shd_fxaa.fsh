@@ -2,7 +2,7 @@ varying vec2 v_vTexcoord;
 
 uniform vec2 u_vTexel;
 
-const vec2  c_vStrength    = vec2( 7.0 );
+const vec2  c_vStrength    = vec2( 3.0 );
 const vec3  c_vLuminence   = vec3( 1.0 ); //vec3( 0.299, 0.587, 0.114 );
 const float c_fSpanMax     = 8.0;
 const float c_fReduceCoeff = 0.125;

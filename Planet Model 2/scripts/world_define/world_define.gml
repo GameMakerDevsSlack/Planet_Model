@@ -10,7 +10,9 @@ enum world_tri { a_x, a_y, a_z,
 				 parent, hex, size }
 				 
 enum world_hex { x, y, z,
+                 radius, phi, theta,
 				 list_vx, list_vy, list_vz, list_adj,
+				 visited, test,
 				 size }
 
 world_subdivisions = argument0;
@@ -28,7 +30,7 @@ world_hex_grid_count   = 0;
 
 vertex_format_begin();
 vertex_format_add_position_3d();
-vertex_format_add_texcoord();
 vertex_format_add_colour();
+vertex_format_add_texcoord();
 vertex_format_add_normal();
 world_vertex_format = vertex_format_end();

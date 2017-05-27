@@ -17,24 +17,14 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 	world_hex_grid[# _i, world_hex.y ] = _y;
 	world_hex_grid[# _i, world_hex.z ] = _z;
     
+    var _r     = point_distance_3d( 0, 0, 0, _x, _y, _z );
+    var _phi   = darctan2( _z, _x );
+    var _theta = darccos( _y / _r );
+    
+	world_hex_grid[# _i, world_hex.radius ] = _r;
+	world_hex_grid[# _i, world_hex.phi    ] = _phi;
+	world_hex_grid[# _i, world_hex.theta  ] = _theta;
 	/*
-    r = point_distance_3d( 0, 0, 0, xx, yy, zz );
-    phi   = arctan2( zz, xx );
-    theta = arccos( yy / r );
-    
-    ds_list_replace( lst_hex_radius, i, r );
-    ds_list_replace( lst_hex_phi, i, phi );
-    ds_list_replace( lst_hex_theta, i, theta );
-    
-    
-    
-    //Precompute trig values for lighting
-    sintheta = sin( theta );
-    ds_list_replace( lst_hex_light_presin, i, sin( phi ) * sintheta );
-    ds_list_replace( lst_hex_light_precos, i, cos( phi ) * sintheta );
-    
-    
-    
     //Precompute quaternion values for model placement
     ds_quaternion_reset( k_global_quaternion );
     ds_quaternion_multiply_left( k_global_quaternion,   cos( theta * 0.5 ), 0, 0, -sin( theta * 0.5 ) );
