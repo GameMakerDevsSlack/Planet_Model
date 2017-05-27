@@ -24,20 +24,14 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 	world_hex_grid[# _i, world_hex.radius ] = _r;
 	world_hex_grid[# _i, world_hex.phi    ] = _phi;
 	world_hex_grid[# _i, world_hex.theta  ] = _theta;
-	/*
+	
     //Precompute quaternion values for model placement
-    ds_quaternion_reset( k_global_quaternion );
-    ds_quaternion_multiply_left( k_global_quaternion,   cos( theta * 0.5 ), 0, 0, -sin( theta * 0.5 ) );
-    ds_quaternion_multiply_left( k_global_quaternion,   cos( phi * 0.5 ), 0, -sin( phi * 0.5 ), 0 );
-    ds_quaternion_get_rotation_axis( k_global_quaternion );
+	var _quaternion = quaternion_create();
+    _quaternion = quaternion_multiply( _quaternion,   [ cos( _theta * 0.5 ), 0,                  0, -sin( _theta * 0.5 ) ] );
+    _quaternion = quaternion_multiply( _quaternion,   [ cos( _phi   * 0.5 ), 0, -sin( _phi * 0.5 ),                    0 ] );
+	world_hex_grid[# _i, world_hex.matrix ] = quaternion_matrix( _quaternion );
     
-    ds_list_replace( lst_hex_quat_a, i, result_coord[0] );
-    ds_list_replace( lst_hex_quat_b, i, result_coord[1] );
-    ds_list_replace( lst_hex_quat_c, i, result_coord[2] );
-    ds_list_replace( lst_hex_quat_d, i, result_coord[3] );
-    
-    
-    
+    /*
     //Calculate hex's position for skin application
     ds_list_replace( lst_hex_surface_x, i, scr_hex_surface_x( i ) );
     ds_list_replace( lst_hex_surface_y, i, scr_hex_surface_y( i ) );

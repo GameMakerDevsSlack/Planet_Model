@@ -4,6 +4,7 @@ if ( do_debug ) {
 	_str += "\n" + string( obj_world.world_subdivisions ) + " subdivisions";
 	_str += "\n" + string( obj_world.world_max_triangles ) + " triangles";
 	_str += "\n" + string( obj_world.world_max_hexes ) + " hexes";
+	_str += "\n\nWASDQE = rotate";
 	_str += "\n\n1 = show triangles";
 	_str += "\n2 = show hexes";
 	_str += "\n3 = show tiles";
@@ -19,5 +20,7 @@ if ( do_debug ) {
 	
 	draw_set_colour( c_white );
 	draw_set_font( fnt_default );
-	draw_text( 5, 5, _str );
+	draw_text( 5, 145, _str );
+	
+	draw_text( 5, 5, string( camera_y ) + " | " + string( ease_quad_inout( camera_y ) ) );
 }

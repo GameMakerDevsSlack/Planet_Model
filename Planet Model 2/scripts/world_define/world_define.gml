@@ -10,11 +10,12 @@ enum world_tri { a_x, a_y, a_z,
 				 parent, hex, size }
 				 
 enum world_hex { x, y, z,
-                 radius, phi, theta,
-				 list_ax, list_ay, list_az, //6
-				 list_bx, list_by, list_bz, //9
-				 list_adj, list_edge,       //12
-				 visited, test,
+                 radius, phi, theta, matrix,
+				 list_ax, list_ay, list_az,
+				 list_bx, list_by, list_bz,
+				 list_adj, list_edge,
+				 test, tree, rotation,
+				 visited,
 				 size }
 
 world_subdivisions = argument0;

@@ -43,14 +43,13 @@ vec4 DoLighting2(vec4 vertexcolour, vec4 objectspacepos) {
     
     accumcol += DoLight(ws_pos, ws_norm, u_vLightPosRange0, u_vLightColour0);
     accumcol += DoLight(ws_pos, ws_norm, u_vLightPosRange1, u_vLightColour1);
-	/*
     accumcol += DoLight(ws_pos, ws_norm, u_vLightPosRange2, u_vLightColour2);
     accumcol += DoLight(ws_pos, ws_norm, u_vLightPosRange3, u_vLightColour3);
     accumcol += DoLight(ws_pos, ws_norm, u_vLightPosRange4, u_vLightColour4);
     accumcol += DoLight(ws_pos, ws_norm, u_vLightPosRange5, u_vLightColour5);
     accumcol += DoLight(ws_pos, ws_norm, u_vLightPosRange6, u_vLightColour6);
     accumcol += DoLight(ws_pos, ws_norm, u_vLightPosRange7, u_vLightColour7);
-    */
+	
     accumcol *= vertexcolour;
     accumcol += u_vAmbientColour;
     accumcol = min(vec4(1.0), accumcol);

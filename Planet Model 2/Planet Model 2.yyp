@@ -63,6 +63,30 @@
             }
         },
         {
+            "Key": "0c83d724-a3ee-403a-9077-733c3232625f",
+            "Value": {
+                "id": "b4c30db7-4cf6-4116-a6c9-b4b107f0b069",
+                "resourcePath": "scripts\\matrix_reset_world\\matrix_reset_world.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "10246e7b-dd5a-4b8a-865f-fe0377ba7b11",
+            "Value": {
+                "id": "7caefd41-de89-4ca9-9f99-10883504cf15",
+                "resourcePath": "scripts\\quaternion_rotate_worldy\\quaternion_rotate_worldy.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "10ae751b-7fea-48cc-8c5d-b81fb96f3714",
+            "Value": {
+                "id": "ddefb40e-8f04-45d4-9f16-2ac144856e57",
+                "resourcePath": "views\\10ae751b-7fea-48cc-8c5d-b81fb96f3714.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "1166d932-82eb-47d6-a1fd-6d0e0fc04357",
             "Value": {
                 "id": "a8994141-b339-44a5-b933-65ffb3863107",
@@ -83,6 +107,14 @@
             "Value": {
                 "id": "884fa817-3b0c-4d57-bc7a-3293395474cd",
                 "resourcePath": "scripts\\world_tile_all_find_max\\world_tile_all_find_max.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "23dc923d-532e-4aa5-874d-f1bb10706a4f",
+            "Value": {
+                "id": "7b56d6e7-eb4d-48ad-a59d-f3e921207e33",
+                "resourcePath": "scripts\\ease_quad_inout\\ease_quad_inout.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -108,6 +140,14 @@
                 "id": "098f3c67-5827-431d-bfe6-fe536d584b86",
                 "resourcePath": "objects\\obj_screen\\obj_screen.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "2f353d14-2985-4ca8-bdd7-d9fd0e9b3255",
+            "Value": {
+                "id": "8dd7094a-cef1-4d15-b08e-ab4534d1e156",
+                "resourcePath": "scripts\\ease_sine_inout\\ease_sine_inout.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -151,10 +191,34 @@
             }
         },
         {
+            "Key": "3a3b705d-2f98-4d1a-b274-0ae104fb14bf",
+            "Value": {
+                "id": "8a12911d-355b-4a6d-ac50-886486969ffc",
+                "resourcePath": "scripts\\quaternion_rotate_localz\\quaternion_rotate_localz.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3c9f88d5-ecfd-4fb5-9613-ead1fcc38f48",
             "Value": {
                 "id": "ea086d32-977e-43d9-871e-c2b87bb063ad",
                 "resourcePath": "scripts\\world_tri_subdivide_all_iterations\\world_tri_subdivide_all_iterations.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "3d1b3df3-69d6-4656-8add-c97e6bbfed4a",
+            "Value": {
+                "id": "405a5a8c-0fa9-488b-b5a8-3ff0fb0e443a",
+                "resourcePath": "scripts\\quaternion_rotate_vector\\quaternion_rotate_vector.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "45208080-2c03-4a07-be4e-67f8f8137cc9",
+            "Value": {
+                "id": "9e151d59-0ff6-4270-9d80-d2425e5faaef",
+                "resourcePath": "scripts\\quaternion_rotation_axis\\quaternion_rotation_axis.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -187,6 +251,14 @@
             "Value": {
                 "id": "0c122d1f-7bcf-49f1-8117-c0e341342031",
                 "resourcePath": "scripts\\world_define\\world_define.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "4ee91194-43e7-4eb4-b854-a9d7206c86c1",
+            "Value": {
+                "id": "3d8e6f96-82e0-400f-bdd9-95373d3e5c7c",
+                "resourcePath": "scripts\\quaternion_multiply\\quaternion_multiply.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -255,6 +327,30 @@
             }
         },
         {
+            "Key": "658f6737-510b-4f2d-9044-73b2cc35e959",
+            "Value": {
+                "id": "2d3b880c-ae06-4df3-b661-f0a022aa40db",
+                "resourcePath": "scripts\\ease_quint_inout\\ease_quint_inout.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "68bae9d6-8928-442e-a48d-5f569c3dd362",
+            "Value": {
+                "id": "1009b026-7370-4d42-93e4-fb3897af89c3",
+                "resourcePath": "scripts\\vertex_create_buffer_from_obj\\vertex_create_buffer_from_obj.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "69f8fe2f-1db6-455e-bba7-6205529d86e9",
+            "Value": {
+                "id": "b7befd77-b99c-45d4-86e5-5fe5ab4baca0",
+                "resourcePath": "scripts\\quaternion_rotate_localy\\quaternion_rotate_localy.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "6ce46808-ad06-4d5e-b0a3-595945fe5969",
             "Value": {
                 "id": "54b08927-91c8-4734-b75d-22bb425d8009",
@@ -311,6 +407,14 @@
             }
         },
         {
+            "Key": "7bd76b2e-ad2b-4ffb-a460-b679fc7c6052",
+            "Value": {
+                "id": "69c870cd-e294-4e5f-afc0-d27e6498bab0",
+                "resourcePath": "datafiles_yy\\conifer.obj.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "7eecf8e8-ee11-4314-8cd5-9b2c0f9be1f6",
             "Value": {
                 "id": "5873c958-8d3b-4f68-ba4a-e886e3bcabbd",
@@ -359,6 +463,14 @@
             }
         },
         {
+            "Key": "92383c05-4561-4996-ada2-adf44346d667",
+            "Value": {
+                "id": "4ba2095a-a6c6-4549-88bc-20927efead39",
+                "resourcePath": "scripts\\ease_cubic_inout\\ease_cubic_inout.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9a087397-449a-4390-a93c-5b1e17649725",
             "Value": {
                 "id": "75acc9dc-5d3e-4598-b914-0324ec6e7807",
@@ -399,11 +511,27 @@
             }
         },
         {
+            "Key": "a5b39056-2d29-46c4-bfab-6ce540c4fab0",
+            "Value": {
+                "id": "988aa1e3-c0df-43f0-9305-fa9235895b59",
+                "resourcePath": "datafiles_yy\\palm.obj.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "458db533-2c31-441f-8c20-a04d5ae7957e",
                 "resourcePath": "options\\linux\\options_linux.yy",
                 "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "a9f7b94f-f272-4b93-86d8-1cb5e29ed816",
+            "Value": {
+                "id": "cd2af521-41ce-46e0-9699-433e639bc86e",
+                "resourcePath": "scripts\\quaternion_rotate_worldx\\quaternion_rotate_worldx.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -527,6 +655,22 @@
             }
         },
         {
+            "Key": "de6596bb-434d-4503-a212-09474ce51597",
+            "Value": {
+                "id": "368460b1-a44e-4734-9c8e-48fc7d446029",
+                "resourcePath": "scripts\\quaternion_create\\quaternion_create.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "df0d9eda-d5f2-4aaf-a3a5-bc4a0cc60da8",
+            "Value": {
+                "id": "634a88de-15f7-4112-ac3b-ceb248266556",
+                "resourcePath": "scripts\\quaternion_rotate_localx\\quaternion_rotate_localx.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "dfb77bd2-429e-4785-80eb-ac1944f47605",
             "Value": {
                 "id": "fc4f7c19-a4b4-4cd5-880f-51f766c62f81",
@@ -551,10 +695,26 @@
             }
         },
         {
+            "Key": "ec41472c-b2ae-451d-9496-4de34f0a8588",
+            "Value": {
+                "id": "8aebb289-001d-45a4-a9dd-3573b7297e10",
+                "resourcePath": "scripts\\matrix_multiply_world\\matrix_multiply_world.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ed04331b-70f8-41bc-8860-70a3df99e151",
             "Value": {
                 "id": "4dc05b46-1431-4c49-8cfa-c4519765c070",
                 "resourcePath": "scripts\\world_tile_all_set\\world_tile_all_set.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "ee652a90-0116-4fed-bcf4-ba962bb3bad3",
+            "Value": {
+                "id": "19dbc193-0e56-487d-84e7-0bfcca8b2787",
+                "resourcePath": "scripts\\quaternion_matrix\\quaternion_matrix.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -564,6 +724,14 @@
                 "id": "32b27927-c46e-4e45-9a55-316e94306479",
                 "resourcePath": "views\\eee8fc95-35b2-4b0e-91a3-16122de3e8f6.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f0031b99-d001-4165-864c-789599aba055",
+            "Value": {
+                "id": "fafc4ccd-070e-4db1-9949-ec097077e58f",
+                "resourcePath": "datafiles_yy\\deciduous.obj.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -607,6 +775,14 @@
             }
         },
         {
+            "Key": "fb1d12e0-143c-42c7-ab6b-487961e70ee1",
+            "Value": {
+                "id": "e523f72d-7e0f-48c3-b4d9-736fff141430",
+                "resourcePath": "scripts\\quaternion_rotate_worldz\\quaternion_rotate_worldz.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "fe66abe5-0ee7-4b8a-9d84-56ff61edd874",
             "Value": {
                 "id": "c98667e6-5bd0-405f-83e8-89244a2540e4",
@@ -618,11 +794,18 @@
     "script_order": [
         "ba007d5f-639f-404b-8756-b27cab1235dd",
         "78ced0ff-f69b-44b4-ba52-d0645c4115a3",
+        "68bae9d6-8928-442e-a48d-5f569c3dd362",
         "55e957fd-2a14-4386-95c0-dc63f7557ed5",
         "6ce46808-ad06-4d5e-b0a3-595945fe5969",
         "91b13986-71e5-4288-aff8-2da44e78ab6e",
         "cd83cf57-44f9-4f1f-ae64-12a90cd8ee0f",
         "57d297bd-a077-4b92-8798-da463152452f",
+        "ec41472c-b2ae-451d-9496-4de34f0a8588",
+        "0c83d724-a3ee-403a-9077-733c3232625f",
+        "23dc923d-532e-4aa5-874d-f1bb10706a4f",
+        "92383c05-4561-4996-ada2-adf44346d667",
+        "658f6737-510b-4f2d-9044-73b2cc35e959",
+        "2f353d14-2985-4ca8-bdd7-d9fd0e9b3255",
         "4d3e48f8-57ec-4b11-99b7-5ebe08829aaf",
         "37630292-4a9e-4991-947e-2ed120231c4a",
         "00b1b126-8852-4f09-8f06-945645b0c3d7",
@@ -653,7 +836,18 @@
         "9025fc8c-799a-45f4-ab07-4d5b0bf21339",
         "71a038b5-06ff-4b79-b65b-2cfbf1cc43be",
         "2185430a-2895-46af-ad6e-bf4d40032eb7",
-        "6e78232a-f7d8-4d88-8e4f-252ac4499498"
+        "6e78232a-f7d8-4d88-8e4f-252ac4499498",
+        "de6596bb-434d-4503-a212-09474ce51597",
+        "ee652a90-0116-4fed-bcf4-ba962bb3bad3",
+        "4ee91194-43e7-4eb4-b854-a9d7206c86c1",
+        "df0d9eda-d5f2-4aaf-a3a5-bc4a0cc60da8",
+        "69f8fe2f-1db6-455e-bba7-6205529d86e9",
+        "3a3b705d-2f98-4d1a-b274-0ae104fb14bf",
+        "a9f7b94f-f272-4b93-86d8-1cb5e29ed816",
+        "10246e7b-dd5a-4b8a-865f-fe0377ba7b11",
+        "fb1d12e0-143c-42c7-ab6b-487961e70ee1",
+        "3d1b3df3-69d6-4656-8add-c97e6bbfed4a",
+        "45208080-2c03-4a07-be4e-67f8f8137cc9"
     ],
     "tutorial": ""
 }

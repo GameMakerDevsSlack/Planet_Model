@@ -4,7 +4,7 @@ vertex_begin( _vbuff, world_vertex_format );
 for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
     
 	var _value = world_hex_grid[# _i, world_hex.test ];
-	var _height = lerp( 1, 1.15, _value );
+	var _height = lerp( 1, 1.12, _value );
 	var _colour = make_colour_hsv( 0, 0, 255*_value );
 	
     var _ox = _height*world_hex_grid[# _i, world_hex.x ];

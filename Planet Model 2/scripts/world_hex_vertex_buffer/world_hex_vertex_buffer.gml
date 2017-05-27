@@ -3,7 +3,8 @@ vertex_begin( _vbuff, world_vertex_format );
 
 for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
     
-	var _colour = make_colour_random();
+	//var _colour = make_colour_random();
+	var _colour = make_color_hsv( 255*world_hex_grid[# _i, world_hex.theta ]/180, 255, 255 );
 	
     var _ox = world_hex_grid[# _i, world_hex.x ];
     var _oy = world_hex_grid[# _i, world_hex.y ];
