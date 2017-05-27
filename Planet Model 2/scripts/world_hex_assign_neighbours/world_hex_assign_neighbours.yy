@@ -1,8 +1,8 @@
 {
-    "id": "c59223e4-bb91-4d32-8721-e057a0d3e6d8",
+    "id": "190f5de2-ca51-4978-b97f-00b8e803a8b3",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "world_hex_all_neighbours",
+    "name": "world_hex_assign_neighbours",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -11,7 +11,9 @@ enum world_tri { a_x, a_y, a_z,
 				 
 enum world_hex { x, y, z,
                  radius, phi, theta,
-				 list_vx, list_vy, list_vz, list_adj,
+				 list_ax, list_ay, list_az, //6
+				 list_bx, list_by, list_bz, //9
+				 list_adj, list_edge,       //12
 				 visited, test,
 				 size }
 

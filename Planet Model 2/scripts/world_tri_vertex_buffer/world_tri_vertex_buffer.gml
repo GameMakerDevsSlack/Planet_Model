@@ -28,9 +28,9 @@ for( var _i = 0; _i < _count; _i++ ) {
 	_ny *= _d;
 	_nz *= _d;
 	
-	vertex_position_3d( _vbuff,   _ax, _ay, _az ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
-	vertex_position_3d( _vbuff,   _bx, _by, _bz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
-	vertex_position_3d( _vbuff,   _cx, _cy, _cz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
+	vertex_position_3d( _vbuff,   _ax, _ay, _az ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_colour( _vbuff,   _colour, 1 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
+	vertex_position_3d( _vbuff,   _bx, _by, _bz ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_colour( _vbuff,   _colour, 1 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
+	vertex_position_3d( _vbuff,   _cx, _cy, _cz ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_colour( _vbuff,   _colour, 1 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
 	
 }
 

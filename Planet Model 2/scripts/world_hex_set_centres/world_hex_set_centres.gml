@@ -5,13 +5,13 @@
 
 for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
     
-    var _x_list = world_hex_grid[# _i, world_hex.list_vx ];
-    var _y_list = world_hex_grid[# _i, world_hex.list_vy ];
-    var _z_list = world_hex_grid[# _i, world_hex.list_vz ];
+    var _ax_list = world_hex_grid[# _i, world_hex.list_ax ];
+    var _ay_list = world_hex_grid[# _i, world_hex.list_ay ];
+    var _az_list = world_hex_grid[# _i, world_hex.list_az ];
     
-    var _x = ds_list_mean( _x_list );
-    var _y = ds_list_mean( _y_list );
-    var _z = ds_list_mean( _z_list );
+    var _x = ds_list_mean( _ax_list );
+    var _y = ds_list_mean( _ay_list );
+    var _z = ds_list_mean( _az_list );
     
 	world_hex_grid[# _i, world_hex.x ] = _x;
 	world_hex_grid[# _i, world_hex.y ] = _y;

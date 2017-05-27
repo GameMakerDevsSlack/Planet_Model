@@ -1,8 +1,8 @@
 {
-    "id": "7ac3288c-d6f4-49ac-b9f4-b3a7f6643050",
+    "id": "6e78232a-f7d8-4d88-8e4f-252ac4499498",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "world_hex_all_reorder_vertices",
+    "name": "world_tile_set_edges",
     "IsCompatibility": false,
     "IsDnD": false
 }

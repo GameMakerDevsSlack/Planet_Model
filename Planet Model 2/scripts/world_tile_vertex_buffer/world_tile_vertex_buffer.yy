@@ -1,8 +1,8 @@
 {
-    "id": "1e1ede94-a5c5-49bf-a92f-41583c315202",
+    "id": "e4268892-1720-4926-9f04-4879b764d833",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "world_hex_process",
+    "name": "world_tile_vertex_buffer",
     "IsCompatibility": false,
     "IsDnD": false
 }

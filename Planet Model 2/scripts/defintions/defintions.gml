@@ -3,7 +3,7 @@
 #macro C_AMBER make_colour_rgb( 255, 240, 100 )
 // #160C25
 
-randomise();
+//randomise();
 
 global.return[0] = undefined;
 global.return[1] = undefined;
