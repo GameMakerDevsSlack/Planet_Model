@@ -1,5 +1,7 @@
 /// @param subdivisions
 /// @param scale
+/// @param relief
+/// @param model_scale
 
 enum world_tri { a_x, a_y, a_z,
                  b_x, b_y, b_z,
@@ -20,8 +22,10 @@ enum world_hex { x, y, z,
 
 world_subdivisions = argument0;
 world_scale        = argument1;
+world_relief       = argument2;
+world_model_scale  = argument3;
 
-world_max_triangles    = 20*power( 3, world_subdivisions );
+world_max_triangles    = 20*power( 3,world_subdivisions );
 world_tri_grid_a       = ds_grid_create( world_max_triangles, world_tri.size );
 world_tri_grid_b       = ds_grid_create( world_max_triangles, world_tri.size );
 world_tri_grid_a_count = 0;

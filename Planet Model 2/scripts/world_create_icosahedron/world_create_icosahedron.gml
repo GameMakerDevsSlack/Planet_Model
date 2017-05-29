@@ -15,23 +15,23 @@ var _vertex_z;
 
 //This gives us the locations of the first "ring" of points
 for( var _i = 0; _i < 5; _i++ ) { //0 -> 4
-    _vertex_x[_i] = lengthdir_x( _layer_radius, _i * _vertex_rot ) * world_scale;
-    _vertex_y[_i] = _layer_height                                  * world_scale;
-    _vertex_z[_i] = lengthdir_y( _layer_radius, _i * _vertex_rot ) * world_scale;
+    _vertex_x[_i] = lengthdir_x( _layer_radius, _i * _vertex_rot );
+    _vertex_y[_i] = _layer_height;
+    _vertex_z[_i] = lengthdir_y( _layer_radius, _i * _vertex_rot );
 }
 
 //And this, the second ring. Note annotations to remind me that 5 + 5 = 10
 for( var _i = 0; _i < 5; _i++ ) { //5 -> 9
-    _vertex_x[_i + 5] = lengthdir_x( -_layer_radius, _i * _vertex_rot ) * world_scale;
-    _vertex_y[_i + 5] = -_layer_height                                  * world_scale;
-    _vertex_z[_i + 5] = lengthdir_y( -_layer_radius, _i * _vertex_rot ) * world_scale;
+    _vertex_x[_i + 5] = lengthdir_x( -_layer_radius, _i * _vertex_rot );
+    _vertex_y[_i + 5] = -_layer_height;
+    _vertex_z[_i + 5] = lengthdir_y( -_layer_radius, _i * _vertex_rot );
 }
 
 //The order of these coordinates was completely trial and error
 for( var _i = 0; _i < 5; _i++ ) { //Construct top faces, 0 -> 4
     var _next_i = ( _i + 1 ) mod 5;
     world_tri_add( _vertex_x[_i], _vertex_y[_i], _vertex_z[_i],
-                   0, world_scale, 0,
+                   0, 1, 0,
                    _vertex_x[_next_i], _vertex_y[_next_i], _vertex_z[_next_i],
                    noone );
 }
@@ -62,7 +62,7 @@ for( var _i = 0; _i < 5; _i++ ) { //Construct bottom faces, 15 -> 19
     var _my_i = _i + 5;
     var _next_i = ( ( _i + 1 ) mod 5 ) + 5;
     world_tri_add( _vertex_x[_next_i], _vertex_y[_next_i], _vertex_z[_next_i],
-                   0, -world_scale, 0,
+                   0, -1, 0,
                    _vertex_x[_my_i], _vertex_y[_my_i], _vertex_z[_my_i],
                    noone );
 }

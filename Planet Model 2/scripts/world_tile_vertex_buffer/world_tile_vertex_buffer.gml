@@ -5,7 +5,7 @@ vertex_begin( _vbuff, world_vertex_format );
 for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
     
 	var _value = world_hex_grid[# _i, world_hex.test ];
-	var _height = lerp( 1, 1.12, _value );
+	var _height = 1 + world_relief*_value;
 	var _colour = make_colour_hsv( 0, 0, 255*_value );
 	
     var _ox = _height*world_hex_grid[# _i, world_hex.x ];
@@ -59,11 +59,10 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 
 //Build foliage
 for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
-//for( var _i = 0; _i < 1; _i++ ) {
 	
 	var _value = world_hex_grid[# _i, world_hex.test ];
 	
-	var _height = lerp( 1, 1.12, _value );
+	var _height = 1 + world_relief*_value;
     var _ox = _height*world_hex_grid[# _i, world_hex.x ];
     var _oy = _height*world_hex_grid[# _i, world_hex.y ];
     var _oz = _height*world_hex_grid[# _i, world_hex.z ];
@@ -79,15 +78,15 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 			var _buffer = global.buffer_conifer;
 		}
 		
-		var _pos_matrix = matrix_build( 0, 0, 0,   0, 0, 0,   1/300, 1/300, 1/300 );
+		var _pos_matrix = matrix_build( 0, 0, 0,   0, 0, 0,   world_model_scale/world_scale, world_model_scale/world_scale, world_model_scale/world_scale );
 		_pos_matrix = matrix_multiply( _pos_matrix, matrix_build( 0, 0, 0,   0, world_hex_grid[# _i, world_hex.rotation ], 0,   1, 1, 1 ) );
 		_pos_matrix = matrix_multiply( _pos_matrix, matrix_build( 0, 0, 0,   0, 0, world_hex_grid[# _i, world_hex.theta ],   1, 1, 1 ) );
 		_pos_matrix = matrix_multiply( _pos_matrix, matrix_build( _ox, _oy, _oz,
-		                                                  0, world_hex_grid[# _i, world_hex.phi ], 0,   1, 1, 1 ) );
+		                                                          0, world_hex_grid[# _i, world_hex.phi ], 0,   1, 1, 1 ) );
 		
 		var _norm_matrix = matrix_build( 0, 0, 0,   0, world_hex_grid[# _i, world_hex.rotation ], 0,   1, 1, 1 );
 		_norm_matrix = matrix_multiply( _norm_matrix, matrix_build( 0, 0, 0,   0, 0, world_hex_grid[# _i, world_hex.theta ],   1, 1, 1 ) );
-		_norm_matrix = matrix_multiply( _norm_matrix, matrix_build( 0, 0, 0,    0, world_hex_grid[# _i, world_hex.phi ], 0,   1, 1, 1 ) );
+		_norm_matrix = matrix_multiply( _norm_matrix, matrix_build( 0, 0, 0,   0, world_hex_grid[# _i, world_hex.phi ], 0,   1, 1, 1 ) );
 		
 		add_buffer_to_vertex_buffer( _buffer, _pos_matrix, _norm_matrix, _vbuff );
 		
