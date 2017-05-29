@@ -79,8 +79,6 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 		}
 		
 		var _k = world_model_scale/world_scale;
-		//_pos_matrix = matrix_build( 0, 0, 0,   0, world_hex_grid[# _i, world_hex.rotation ], 0,   _k, _k, _k );
-		
 		var _alpha = world_hex_grid[# _i, world_hex.rotation ];
 		var _theta = world_hex_grid[# _i, world_hex.theta ];
 		var _phi   = world_hex_grid[# _i, world_hex.phi ];
@@ -91,6 +89,28 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 		var _p_sin = dsin( _phi );
 		var _p_cos = dcos( _phi );
 		
+		_a_sin *= _k;
+		_a_cos *= _k;
+		var _pos_matrix = [  _a_cos*_t_cos*_p_cos - _a_sin*_p_sin, -_a_cos*_t_sin,  _a_cos*_t_cos*_p_sin+_a_sin*_p_cos, 0,
+		                                         _k*_t_sin*_p_cos,      _k*_t_cos,                    _k*_t_sin*_p_sin, 0,
+		                    -_a_sin*_t_cos*_p_cos - _a_cos*_p_sin,  _a_sin*_t_sin, -_a_sin*_t_cos*_p_sin+_a_cos*_p_cos, 0,
+		                                                      _ox,            _oy,                                 _oz, 1 ];
+		
+		_a_sin /= _k;
+		_a_cos /= _k;
+		var _norm_matrix = [  _a_cos*_t_cos*_p_cos - _a_sin*_p_sin, -_a_cos*_t_sin,  _a_cos*_t_cos*_p_sin+_a_sin*_p_cos, 0,
+		                                             _t_sin*_p_cos,         _t_cos,                       _t_sin*_p_sin, 0,
+		                     -_a_sin*_t_cos*_p_cos - _a_cos*_p_sin,  _a_sin*_t_sin, -_a_sin*_t_cos*_p_sin+_a_cos*_p_cos, 0,
+		                                                         0,              0,                                   0, 1 ];
+																	
+		/*
+		var _pos_matrix = [  _k*_a_cos*_t_cos*_p_cos - _k*_a_sin*_p_sin, -_k*_a_cos*_t_sin,  _k*_a_cos*_t_cos*_p_sin+_k*_a_sin*_p_cos, 0,
+		                                               _k*_t_sin*_p_cos,         _k*_t_cos,                          _k*_t_sin*_p_sin, 0,
+		                    -_k*_a_sin*_t_cos*_p_cos - _k*_a_cos*_p_sin,  _k*_a_sin*_t_sin, -_k*_a_sin*_t_cos*_p_sin+_k*_a_cos*_p_cos, 0,
+		                                                            _ox,               _oy,                                       _oz, 1 ];
+		*/
+		
+		/*
 		_pos_matrix = [ _k*_a_cos,  0, _k*_a_sin, 0,
 					            0, _k,         0, 0,
 				       -_k*_a_sin,  0, _k*_a_cos, 0,
@@ -105,19 +125,16 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 													        0, 1,      0, 0,
 													  -_p_sin, 0, _p_cos, 0,
 													        0, 0,      0, 1 ] );
-		
-		
 		_pos_matrix[12] = _ox;
 		_pos_matrix[13] = _oy;
 		_pos_matrix[14] = _oz;
-		
-		//_pos_matrix = matrix_multiply( _pos_matrix, matrix_build( _ox, _oy, _oz,
-		//                                                          0, world_hex_grid[# _i, world_hex.phi ], 0,   1, 1, 1 ) );
-		
+		*/
+		/*
 		var _norm_matrix = matrix_build( 0, 0, 0,   0, world_hex_grid[# _i, world_hex.rotation ], 0,   1, 1, 1 );
 		_norm_matrix = matrix_multiply( _norm_matrix, matrix_build( 0, 0, 0,   0, 0, world_hex_grid[# _i, world_hex.theta ],   1, 1, 1 ) );
 		_norm_matrix = matrix_multiply( _norm_matrix, matrix_build( 0, 0, 0,   0, world_hex_grid[# _i, world_hex.phi ], 0,   1, 1, 1 ) );
-		
+		*/
+																	
 		add_buffer_to_vertex_buffer( _buffer, _pos_matrix, _norm_matrix, _vbuff );
 		
 	}
