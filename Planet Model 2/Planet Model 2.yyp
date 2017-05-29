@@ -151,6 +151,14 @@
             }
         },
         {
+            "Key": "2e955e1e-68de-4527-ba3d-a4dfc32ea031",
+            "Value": {
+                "id": "ef0f3230-686f-49d3-901d-14eba768ca5f",
+                "resourcePath": "scripts\\matrix_multiply_string\\matrix_multiply_string.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2f353d14-2985-4ca8-bdd7-d9fd0e9b3255",
             "Value": {
                 "id": "8dd7094a-cef1-4d15-b08e-ab4534d1e156",
@@ -220,6 +228,14 @@
                 "id": "8a12911d-355b-4a6d-ac50-886486969ffc",
                 "resourcePath": "scripts\\quaternion_rotate_localz\\quaternion_rotate_localz.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "3aaea374-e1cd-4d3b-9e2e-eebf280c6c2c",
+            "Value": {
+                "id": "017e93bc-7009-4f47-bf6b-ae421a209462",
+                "resourcePath": "sprites\\spr_4x4_multiplication\\spr_4x4_multiplication.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -882,6 +898,7 @@
         "33a962f3-8617-421c-9295-36182ff435d5",
         "4aae04e1-794e-4cca-a2b9-5fd057a9e59b",
         "3f54c918-7ea9-45c6-8d4c-996e1bf770c2",
+        "2e955e1e-68de-4527-ba3d-a4dfc32ea031",
         "4d3e48f8-57ec-4b11-99b7-5ebe08829aaf",
         "22cd8cae-1c79-488a-bacc-2d0b955de220",
         "37630292-4a9e-4991-947e-2ed120231c4a",
