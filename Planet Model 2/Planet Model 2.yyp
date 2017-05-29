@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "256c440b-c277-4a01-abbf-ace408888e5f",
+            "Value": {
+                "id": "b770d684-0362-416b-b497-20548a62948a",
+                "resourcePath": "datafiles_yy\\flag.obj.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "27bb4129-8ad8-4ef3-a42b-0db6f7ceb531",
             "Value": {
                 "id": "e87bd6c5-453e-404c-83d0-4cfb41cf017d",
