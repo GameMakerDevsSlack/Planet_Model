@@ -7,7 +7,7 @@ do world_hex_create_from_tri() until ds_list_empty( search_face_stack );
 world_hex_create_from_tri_end();
 world_hex_set_centres();
 repeat( world_hex_grid_count ) world_tile_neighbours_add( world_hex.test, irandom( world_hex_grid_count-1 ), random( 1 ), 5 );
-repeat( world_hex_grid_count/3 ) {
+repeat( world_hex_grid_count*0.4 ) {
 	var _index = irandom( world_hex_grid_count-1 );
 	world_hex_grid[# _index, world_hex.tree ] = true;
 	world_hex_grid[# _index, world_hex.rotation ] = random( 360 );

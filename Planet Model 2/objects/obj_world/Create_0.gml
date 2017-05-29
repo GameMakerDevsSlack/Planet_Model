@@ -1,4 +1,4 @@
-world_define( 6, 300, 0.1, 2 );
+world_define( 6, 300, 0.13, 3.5 );
 world_generate();
 
 vbf_triangles = world_tri_vertex_buffer();
