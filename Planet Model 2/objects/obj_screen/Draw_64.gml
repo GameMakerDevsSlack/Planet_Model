@@ -22,5 +22,4 @@ if ( do_debug ) {
 	draw_set_font( fnt_default );
 	draw_text( 5, 145, _str );
 	
-	draw_text( 5, 5, string( camera_y ) + " | " + string( ease_quad_inout( camera_y ) ) );
 }
