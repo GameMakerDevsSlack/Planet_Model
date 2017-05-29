@@ -9,7 +9,7 @@ switch( mode ) {
 	case world.hexes: vertex_submit( vbf_hexes, pr_trianglelist, sprite_get_texture( spr_white, 0 ) ); break;
 	case world.tiles: vertex_submit( vbf_tiles, pr_trianglelist, sprite_get_texture( spr_white, 0 ) ); break;
 }
-
+/*
 for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 	
 	var _height = world_hex_grid[# _i, world_hex.test ];
@@ -38,3 +38,4 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 	}
 	
 }
+*/

@@ -5,6 +5,7 @@
 // #140B14
 
 //randomise();
+random_set_seed( 1 );
 
 global.return[0] = undefined;
 global.return[1] = undefined;

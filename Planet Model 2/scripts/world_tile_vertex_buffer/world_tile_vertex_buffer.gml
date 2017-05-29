@@ -1,6 +1,7 @@
 var _vbuff = vertex_create_buffer();
 vertex_begin( _vbuff, world_vertex_format );
 
+//Build hexes themselves
 for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
     
 	var _value = world_hex_grid[# _i, world_hex.test ];
@@ -37,22 +38,61 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 		var _ky = _height*_by_list[| _j ];
 		var _kz = _height*_bz_list[| _j ];
 		
-		vertex_position_3d( _vbuff,   _ox, _oy, _oz ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_colour( _vbuff,   _colour, 1 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
-		vertex_position_3d( _vbuff,   _kx, _ky, _kz ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_colour( _vbuff,   _colour, 1 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
-		vertex_position_3d( _vbuff,   _jx, _jy, _jz ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_colour( _vbuff,   _colour, 1 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
+		vertex_position_3d( _vbuff,   _ox, _oy, _oz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
+		vertex_position_3d( _vbuff,   _kx, _ky, _kz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
+		vertex_position_3d( _vbuff,   _jx, _jy, _jz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
 		
 		if ( _e_list[| _j ] ) {
 			
 			cross_product_normalised( _kx, _ky, _kz,   _jx, _jy, _jz );
 		
-			vertex_position_3d( _vbuff,     0,   0,   0 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_colour( _vbuff,   _colour, 1 ); vertex_normal( _vbuff,   global.return[0], global.return[1], global.return[2] );
-			vertex_position_3d( _vbuff,   _jx, _jy, _jz ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_colour( _vbuff,   _colour, 1 ); vertex_normal( _vbuff,   global.return[0], global.return[1], global.return[2] );
-			vertex_position_3d( _vbuff,   _kx, _ky, _kz ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_colour( _vbuff,   _colour, 1 ); vertex_normal( _vbuff,   global.return[0], global.return[1], global.return[2] );
+			vertex_position_3d( _vbuff,     0,   0,   0 ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   global.return[0], global.return[1], global.return[2] );
+			vertex_position_3d( _vbuff,   _jx, _jy, _jz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   global.return[0], global.return[1], global.return[2] );
+			vertex_position_3d( _vbuff,   _kx, _ky, _kz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   global.return[0], global.return[1], global.return[2] );
 			
 		}
 		
     }
     
+}
+
+
+//Build foliage
+for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
+//for( var _i = 0; _i < 1; _i++ ) {
+	
+	var _value = world_hex_grid[# _i, world_hex.test ];
+	
+	var _height = lerp( 1, 1.12, _value );
+    var _ox = _height*world_hex_grid[# _i, world_hex.x ];
+    var _oy = _height*world_hex_grid[# _i, world_hex.y ];
+    var _oz = _height*world_hex_grid[# _i, world_hex.z ];
+	
+	if ( ( _value == 0.2 ) or ( _value == 0.4 ) ) and ( world_hex_grid[# _i, world_hex.tree ] ) {
+		
+		var _theta = abs( 90 - world_hex_grid[# _i, world_hex.theta ] );
+		if ( _theta < 18 ) {
+			var _buffer = global.buffer_palm;
+		} else if ( _theta < 50 ) {
+			var _buffer = global.buffer_deciduous;
+		} else {
+			var _buffer = global.buffer_conifer;
+		}
+		
+		var _pos_matrix = matrix_build( 0, 0, 0,   0, 0, 0,   1/300, 1/300, 1/300 );
+		_pos_matrix = matrix_multiply( _pos_matrix, matrix_build( 0, 0, 0,   0, world_hex_grid[# _i, world_hex.rotation ], 0,   1, 1, 1 ) );
+		_pos_matrix = matrix_multiply( _pos_matrix, matrix_build( 0, 0, 0,   0, 0, world_hex_grid[# _i, world_hex.theta ],   1, 1, 1 ) );
+		_pos_matrix = matrix_multiply( _pos_matrix, matrix_build( _ox, _oy, _oz,
+		                                                  0, world_hex_grid[# _i, world_hex.phi ], 0,   1, 1, 1 ) );
+		
+		var _norm_matrix = matrix_build( 0, 0, 0,   0, world_hex_grid[# _i, world_hex.rotation ], 0,   1, 1, 1 );
+		_norm_matrix = matrix_multiply( _norm_matrix, matrix_build( 0, 0, 0,   0, 0, world_hex_grid[# _i, world_hex.theta ],   1, 1, 1 ) );
+		_norm_matrix = matrix_multiply( _norm_matrix, matrix_build( 0, 0, 0,    0, world_hex_grid[# _i, world_hex.phi ], 0,   1, 1, 1 ) );
+		
+		add_buffer_to_vertex_buffer( _buffer, _pos_matrix, _norm_matrix, _vbuff );
+		
+	}
+	
 }
 
 vertex_end( _vbuff );
