@@ -14,7 +14,8 @@ var _y2 = argument4;
 var _z2 = argument5;
 var _t  = argument6;
 
-var _angle = arccos( dot_product_3d_normalised( _x1, _y1, _z1,   _x2, _y2, _z2 ) );
+var _dot = clamp( dot_product_3d_normalised( _x1, _y1, _z1,   _x2, _y2, _z2 ), -1, 1 );
+if ( _dot != 0 ) var _angle = arccos( _dot ) else var _angle = 0;
 
 var _s0 = sin( _angle );
 

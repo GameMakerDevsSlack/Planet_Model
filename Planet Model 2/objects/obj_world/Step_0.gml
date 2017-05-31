@@ -1,33 +1,13 @@
-if ( keyboard_check_pressed( ord( "1" ) ) ) {
-	mode = world.triangles;
-} else if ( keyboard_check_pressed( ord( "2" ) ) ) {
-	mode = world.hexes;
-} else if ( keyboard_check_pressed( ord( "3" ) ) ) {
-	mode = world.tiles;
-}
+if ( keyboard_check( ord( "W" ) ) ) rot_x_speed += 0.15;
+if ( keyboard_check( ord( "S" ) ) ) rot_x_speed -= 0.15;
+if ( keyboard_check( ord( "A" ) ) ) rot_z_speed += 0.15;
+if ( keyboard_check( ord( "D" ) ) ) rot_z_speed -= 0.15;
+if ( keyboard_check( ord( "Q" ) ) ) rot_y_speed -= 0.15;
+if ( keyboard_check( ord( "E" ) ) ) rot_y_speed += 0.15;
+rot_x_speed *= 0.85;
+rot_y_speed *= 0.85;
+rot_z_speed *= 0.85;
 
-
-if( obj_screen.do_ortho ) {
-	if ( keyboard_check( ord( "W" ) ) ) rot_x_speed -= 0.15;
-	if ( keyboard_check( ord( "S" ) ) ) rot_x_speed += 0.15;
-	if ( keyboard_check( ord( "A" ) ) ) rot_z_speed -= 0.15;
-	if ( keyboard_check( ord( "D" ) ) ) rot_z_speed += 0.15;
-	if ( keyboard_check( ord( "Q" ) ) ) rot_y_speed -= 0.15;
-	if ( keyboard_check( ord( "E" ) ) ) rot_y_speed += 0.15;
-	rot_x_speed *= 0.85;
-	rot_y_speed *= 0.85;
-	rot_z_speed *= 0.85;
-} else {
-	if ( keyboard_check( ord( "W" ) ) ) rot_x_speed += 0.15;
-	if ( keyboard_check( ord( "S" ) ) ) rot_x_speed -= 0.15;
-	if ( keyboard_check( ord( "A" ) ) ) rot_z_speed += 0.15;
-	if ( keyboard_check( ord( "D" ) ) ) rot_z_speed -= 0.15;
-	if ( keyboard_check( ord( "Q" ) ) ) rot_y_speed -= 0.15;
-	if ( keyboard_check( ord( "E" ) ) ) rot_y_speed += 0.15;
-	rot_x_speed *= 0.85;
-	rot_y_speed *= 0.85;
-	rot_z_speed *= 0.85;
-}
 /*
 if ( keyboard_check( ord( "W" ) ) ) rot_x_speed += 0.1;
 if ( keyboard_check( ord( "S" ) ) ) rot_x_speed -= 0.1;

@@ -3,10 +3,11 @@ vertex_begin( _vbuff, world_vertex_format );
 
 //Build hexes themselves
 for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
-    
+    var _j = _i + 1;
+	
 	var _value = world_hex_grid[# _i, world_hex.test ];
 	var _height = 1 + world_relief*_value;
-	var _colour = make_colour_hsv( 0, 0, 255*_value );
+	var _colour = make_colour_rgb( _j mod 255, _j div 255, 0 );
 	
     var _ox = _height*world_hex_grid[# _i, world_hex.x ];
     var _oy = _height*world_hex_grid[# _i, world_hex.y ];
@@ -54,59 +55,6 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 		
     }
     
-}
-
-
-//Build foliage
-for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
-	
-	var _value = world_hex_grid[# _i, world_hex.test ];
-	
-	var _height = 1 + world_relief*_value;
-    var _ox = _height*world_hex_grid[# _i, world_hex.x ];
-    var _oy = _height*world_hex_grid[# _i, world_hex.y ];
-    var _oz = _height*world_hex_grid[# _i, world_hex.z ];
-	
-	if ( ( _value == 0.2 ) or ( _value == 0.4 ) ) and ( world_hex_grid[# _i, world_hex.tree ] ) {
-		
-		var _theta = abs( 90 - world_hex_grid[# _i, world_hex.theta ] );
-		if ( _theta < 18 ) {
-			var _buffer = global.buffer_palm;
-		} else if ( _theta < 50 ) {
-			var _buffer = global.buffer_deciduous;
-		} else {
-			var _buffer = global.buffer_conifer;
-		}
-		
-		var _k = world_model_scale/world_scale;
-		var _alpha = world_hex_grid[# _i, world_hex.rotation ];
-		var _theta = world_hex_grid[# _i, world_hex.theta ];
-		var _phi   = world_hex_grid[# _i, world_hex.phi ];
-		var _a_sin = dsin( _alpha );
-		var _a_cos = dcos( _alpha );
-		var _t_sin = dsin( _theta );
-		var _t_cos = dcos( _theta );
-		var _p_sin = dsin( _phi );
-		var _p_cos = dcos( _phi );
-		
-		_a_sin *= _k;
-		_a_cos *= _k;
-		var _pos_matrix = [  _a_cos*_t_cos*_p_cos - _a_sin*_p_sin, -_a_cos*_t_sin,  _a_cos*_t_cos*_p_sin+_a_sin*_p_cos, 0,
-		                                         _k*_t_sin*_p_cos,      _k*_t_cos,                    _k*_t_sin*_p_sin, 0,
-		                    -_a_sin*_t_cos*_p_cos - _a_cos*_p_sin,  _a_sin*_t_sin, -_a_sin*_t_cos*_p_sin+_a_cos*_p_cos, 0,
-		                                                      _ox,            _oy,                                 _oz, 1 ];
-		
-		_a_sin /= _k;
-		_a_cos /= _k;
-		var _norm_matrix = [  _a_cos*_t_cos*_p_cos - _a_sin*_p_sin, -_a_cos*_t_sin,  _a_cos*_t_cos*_p_sin+_a_sin*_p_cos, 0,
-		                                             _t_sin*_p_cos,         _t_cos,                       _t_sin*_p_sin, 0,
-		                     -_a_sin*_t_cos*_p_cos - _a_cos*_p_sin,  _a_sin*_t_sin, -_a_sin*_t_cos*_p_sin+_a_cos*_p_cos, 0,
-		                                                         0,              0,                                   0, 1 ];
-																
-		add_buffer_to_vertex_buffer( _buffer, _pos_matrix, _norm_matrix, noone, noone, _vbuff );
-		
-	}
-	
 }
 
 vertex_end( _vbuff );
