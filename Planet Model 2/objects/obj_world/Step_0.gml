@@ -4,9 +4,15 @@ if ( keyboard_check( ord( "A" ) ) ) rot_z_speed += 0.15;
 if ( keyboard_check( ord( "D" ) ) ) rot_z_speed -= 0.15;
 if ( keyboard_check( ord( "Q" ) ) ) rot_y_speed -= 0.15;
 if ( keyboard_check( ord( "E" ) ) ) rot_y_speed += 0.15;
+if ( keyboard_check( ord( "R" ) ) ) camera_vel_y -= 0.002;
+if ( keyboard_check( ord( "F" ) ) ) camera_vel_y += 0.002;
+
 rot_x_speed *= 0.85;
 rot_y_speed *= 0.85;
 rot_z_speed *= 0.85;
+
+camera_vel_y *= 0.8;
+camera_y = clamp( camera_y + camera_vel_y, 0, 1 );
 
 /*
 if ( keyboard_check( ord( "W" ) ) ) rot_x_speed += 0.1;

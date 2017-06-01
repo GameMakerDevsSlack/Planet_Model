@@ -1,11 +1,10 @@
 #macro DEBUG true
 
 #macro C_AMBER make_colour_rgb( 255, 240, 100 )
-#macro C_ROSE make_colour_rgb( 255, 210, 200 )
+#macro C_ROSE  make_colour_rgb( 255, 210, 200 )
 // #140B14
 
-//randomise();
-random_set_seed( 1 );
+randomise();
 
 global.return[0] = undefined;
 global.return[1] = undefined;

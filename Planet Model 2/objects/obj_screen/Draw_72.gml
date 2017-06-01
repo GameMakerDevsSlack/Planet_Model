@@ -7,8 +7,8 @@ var _app_w = surface_get_width( application_surface );
 var _app_h = surface_get_height( application_surface );
 
 
-var _y = lerp( -350, -2000, ease_quad_inout( camera_y ) );
-var _z = lerp(  120,     0, ease_quad_inout( camera_y ) );
+var _y = lerp( -350, -1100, ease_quad_inout( obj_world.camera_y ) );
+var _z = lerp(  120,     0, ease_quad_inout( obj_world.camera_y ) );
 
 var _view_matrix = matrix_build_lookat( 0,  _y, _z,
 							            0,-300, _z/2,
@@ -34,21 +34,23 @@ surface_set_target( srf_click );
 	}
 	
 	click_array = [];
-	shader_set( shd_fog );
-	var _i = 0;
-	with( obj_test_character ) {
+	if ( keyboard_check( vk_shift ) ) {
+		shader_set( shd_fog );
+		var _i = 0;
+		with( obj_test_character ) {
 		
-		var _red   = _i mod 255;
-		var _green = _i div 255;
-		shader_set_uniform_f( shader_get_uniform( shd_fog, "u_vColour" ), _red/255, _green/255, 1/255, 1 );
+			var _red   = _i mod 255;
+			var _green = _i div 255;
+			shader_set_uniform_f( shader_get_uniform( shd_fog, "u_vColour" ), _red/255, _green/255, 1/255, 1 );
 		
-		matrix_set( matrix_world, matrix_multiply( matrix, _viewproj_matrix ) );
-		vertex_submit( model, pr_trianglelist, sprite_get_texture( spr_white, 0 ) );
-		other.click_array[_i] = id;
-		_i++;
+			matrix_set( matrix_world, matrix_multiply( matrix, _viewproj_matrix ) );
+			vertex_submit( model, pr_trianglelist, sprite_get_texture( spr_white, 0 ) );
+			other.click_array[_i] = id;
+			_i++;
 		
+		}
+		shader_reset();
 	}
-	shader_reset();
 
 surface_reset_target();
 

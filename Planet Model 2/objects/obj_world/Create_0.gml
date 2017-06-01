@@ -1,8 +1,12 @@
-world_define( 7, 300, 0.13, 3.5 );
+//world_define( 6, 300, 0.13, 1.7 );
+world_define( 7, 300, 0.13, 1 );
 world_generate();
 
 vbf_tiles  = world_tile_vertex_buffer();
 vbf_relief = world_tile_relief_vertex_buffer();
+
+camera_vel_y = 0;
+camera_y = 0.6;
 
 quaternion = quaternion_create();
 matrix = quaternion_matrix( quaternion );
@@ -16,5 +20,5 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 	_inst.hex_a = _i;
 }
 /*/
-repeat( 20 ) instance_create_depth( 0, 0, 0, obj_test_character );
+repeat( 30 ) instance_create_depth( 0, 0, 0, obj_test_character );
 //*/

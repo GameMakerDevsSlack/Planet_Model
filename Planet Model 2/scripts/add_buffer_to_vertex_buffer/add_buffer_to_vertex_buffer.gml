@@ -12,9 +12,7 @@ var _force_colour = argument3;
 var _force_alpha  = argument4;
 var _vbuff        = argument5;
 
-if ( _force_colour >= 0 ) and ( _force_alpha >= 0 ) {
-	_force_colour = ( (_force_alpha*255) << 24 ) + _force_colour;
-} else {
+if ( _force_colour < 0 ) or ( _force_alpha < 0 ) {
 	_force_colour = noone;
 	_force_alpha  = noone;
 }
@@ -41,10 +39,14 @@ if ( !is_real( _pos_matrix ) and !is_real( _norm_matrix ) ) {
 		var _nz = buffer_read( _buffer, buffer_f32 );
 		var _norm_array = matrix_transform_vertex_fixed( _norm_matrix, _nx, _ny, _nz );
 			
-		vertex_position_3d( _vbuff,   _pos_array[0], _pos_array[1], _pos_array[2] );
-		vertex_colour(      _vbuff,   _colour & $FFFFFF, ( _colour >> 24 )/255 );
-		vertex_texcoord(    _vbuff,   _u, _v );
-		vertex_normal(      _vbuff,   _norm_array[0], _norm_array[1], _norm_array[2] );
+		vertex_position_3d( _vbuff, _pos_array[0], _pos_array[1], _pos_array[2] );
+		if ( _force_colour >= 0 ) {
+			vertex_colour( _vbuff, _force_colour, _force_alpha );
+		} else {
+			vertex_colour( _vbuff, _colour & $FFFFFF, ( _colour >> 24 )/255 );
+		}
+		vertex_texcoord( _vbuff, _u, _v );
+		vertex_normal(   _vbuff, _norm_array[0], _norm_array[1], _norm_array[2] );
 		
 	}
 } else {
@@ -55,7 +57,6 @@ if ( !is_real( _pos_matrix ) and !is_real( _norm_matrix ) ) {
 		var _z = buffer_read( _buffer, buffer_f32 );
 			
 		var _colour = buffer_read( _buffer, buffer_u32 );
-		if ( _force_colour >= 0 ) _colour = _force_colour;
 			
 		var _u = buffer_read( _buffer, buffer_f32 );
 		var _v = buffer_read( _buffer, buffer_f32 );
@@ -65,9 +66,13 @@ if ( !is_real( _pos_matrix ) and !is_real( _norm_matrix ) ) {
 		var _nz = buffer_read( _buffer, buffer_f32 );
 		
 		vertex_position_3d( _vbuff,   _x, _y, _z );
-		vertex_colour(      _vbuff,   _colour & $FFFFFF, ( _colour >> 24 )/255 );
-		vertex_texcoord(    _vbuff,   _u, _v );
-		vertex_normal(      _vbuff,   _nx, _ny, _nz );
+		if ( _force_colour >= 0 ) {
+			vertex_colour( _vbuff, _force_colour, _force_alpha );
+		} else {
+			vertex_colour( _vbuff, _colour & $FFFFFF, ( _colour >> 24 )/255 );
+		}
+		vertex_texcoord( _vbuff,   _u, _v );
+		vertex_normal(   _vbuff,   _nx, _ny, _nz );
 			
 	}
 }
