@@ -9,13 +9,13 @@ do_mouse    = false;
 
 srf_mouse      = noone;
 mouse_array    = [];
+mouse_collect  = false;
+mouse_sample   = false;
 mouse_pressed  = false;
 mouse_down     = false;
 mouse_released = false;
 mouse_p_hex    = noone;
 mouse_p_inst   = noone;
-mouse_p_x      = noone;
-mouse_p_y      = noone;
 mouse_d_x      = noone;
 mouse_d_y      = noone;
 mouse_d_pre_x  = noone;

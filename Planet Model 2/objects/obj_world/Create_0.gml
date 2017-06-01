@@ -20,7 +20,7 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 	_inst.hex_a = _i;
 }
 /*/
-repeat( 30 ) instance_create_depth( 0, 0, 0, obj_test_character );
+repeat( 30 ) create_test_character();
 //*/
 
 var _app_w = surface_get_width( application_surface );
@@ -32,7 +32,5 @@ var _z = lerp(  120,     0, ease_quad_inout( camera_y ) );
 camera_view_matrix = matrix_build_lookat( 0,  _y, _z,
 						                  0,-300, _z/2,
 						                  0,   0,  1 );
-
 camera_proj_matrix = matrix_build_projection_perspective_fov( 60, _app_w/_app_h, 1, 16000 );
-
 camera_viewproj_matrix = matrix_multiply( camera_view_matrix, camera_proj_matrix );

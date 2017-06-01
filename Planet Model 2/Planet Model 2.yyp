@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "08c29ab7-be1c-40b0-8147-59d1cea4f97d",
+            "Value": {
+                "id": "a2940711-d8d2-4b6e-b708-59687e0960f4",
+                "resourcePath": "scripts\\create_test_character\\create_test_character.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0c83d724-a3ee-403a-9077-733c3232625f",
             "Value": {
                 "id": "b4c30db7-4cf6-4116-a6c9-b4b107f0b069",
@@ -99,6 +107,14 @@
             "Value": {
                 "id": "7dcf8463-af94-415c-a273-f047526466bc",
                 "resourcePath": "scripts\\world_hex_assign_neighbours\\world_hex_assign_neighbours.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "2054e99b-7113-410a-96c9-932d8c2f92be",
+            "Value": {
+                "id": "3e3672d6-5b83-487d-bcfe-4ed68bc92d9c",
+                "resourcePath": "scripts\\collect_mouse\\collect_mouse.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -468,6 +484,14 @@
                 "id": "98a9a4e7-9279-48cf-897b-6fbc47fadf2d",
                 "resourcePath": "scripts\\world_tile_set_edges\\world_tile_set_edges.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6f3f8cdd-329a-4acc-a4a6-e83cd885301f",
+            "Value": {
+                "id": "050ed9d5-3210-4e0b-857d-28fad867a185",
+                "resourcePath": "datafiles_yy\\boat.obj.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -1035,7 +1059,9 @@
         "45208080-2c03-4a07-be4e-67f8f8137cc9",
         "f0fa38ae-6356-4ec2-98cc-36b2d26acbd2",
         "8e76da2c-ddf5-48b4-9b73-2f3aa3fd29b1",
-        "479d8c9e-0cef-454d-8206-bb34eb18b687"
+        "479d8c9e-0cef-454d-8206-bb34eb18b687",
+        "08c29ab7-be1c-40b0-8147-59d1cea4f97d",
+        "2054e99b-7113-410a-96c9-932d8c2f92be"
     ],
     "tutorial": ""
 }

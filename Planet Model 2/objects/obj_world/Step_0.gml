@@ -50,7 +50,7 @@ if ( obj_screen.mouse_p_hex >= 0 ) or ( obj_screen.mouse_p_inst >= 0 ) {
 	var _ang2 = point_direction( 0, 0, _x2, _y2 );
 	
 	var _dang = angle_difference( _ang2, _ang1 );
-	rot_y_speed -= 3.5*_k*_dang;
+	rot_y_speed -= 3*_k*_dang;
 	
 }
 

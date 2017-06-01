@@ -1,6 +1,8 @@
 old_view_matrix = matrix_get( matrix_view );
 old_proj_matrix = matrix_get( matrix_projection );
 
+if ( mouse_collect ) collect_mouse();
+
 draw_clear( space_colour );
 
 if ( do_lighting ) {

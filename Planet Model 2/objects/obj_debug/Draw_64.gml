@@ -3,9 +3,8 @@ if ( do_debug ) {
 	var _str = string( obj_world.world_subdivisions ) + " subdivisions";
 	_str += "\n" + string( obj_world.world_max_triangles ) + " triangles";
 	_str += "\n" + string( obj_world.world_max_hexes ) + " hexes";
-	_str += "\n\nWASDQERF = rotate";
-	_str += "\n\n7 = toggle lighting";
-	_str += "\n8 = toggle relief";
+	//_str += "\n\nWASDQERF = rotate";
+	_str += "\n\n8 = toggle lighting";
 	_str += "\n9 = toggle FXAA";
 	_str += "\n0 = toggle debug";
 	
