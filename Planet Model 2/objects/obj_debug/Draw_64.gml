@@ -9,13 +9,14 @@ if ( do_debug ) {
 	_str += "\n9 = toggle FXAA";
 	_str += "\n0 = toggle debug";
 	
-	_str += "\n\nclick_hex=" + string( obj_screen.click_hex );
-	_str += "\nclick_instance=" + string( obj_screen.click_instance );
-	if ( instance_exists( obj_screen.click_instance ) ) {
-		_str += "\ninstance hex=" + string( (obj_screen.click_instance).hex_a );
+	_str += "\n\nmouse_hex=" + string( obj_screen.mouse_p_hex );
+	_str += "\nmouse_instance=" + string( obj_screen.mouse_p_inst );
+	if ( instance_exists( obj_screen.mouse_p_inst ) ) {
+		_str += "\ninstance hex=" + string( (obj_screen.mouse_p_inst).hex_a );
 	} else {
 		_str += "\n(no instance)";
 	}
+	with( obj_screen ) _str += "\nmouse=" + string( mouse_d_x - mouse_d_pre_x ) + "," + string( mouse_d_y - mouse_d_pre_y );
 	
 	_str += "\n";
 	if ( obj_screen.do_lighting ) _str += "\nLighting";

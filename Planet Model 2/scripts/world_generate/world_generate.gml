@@ -1,5 +1,4 @@
 world_create_icosahedron();
-
 world_tri_subdivide_all_iterations();
 world_tri_pop_all();
 world_hex_create_from_tri_begin();

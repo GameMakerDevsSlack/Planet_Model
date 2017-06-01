@@ -1,3 +1,8 @@
+var _grid         = obj_world.world_hex_grid;
+var _model_scale  = obj_world.world_model_scale;
+var _scale        = obj_world.world_scale*( 1 + obj_world.world_relief*_grid[# hex_a, world_hex.test ] );
+var _world_matrix = obj_world.matrix;
+
 /*
 var _result = slerp( _grid[# hex_a, world_hex.x ], _grid[# hex_a, world_hex.y ], _grid[# hex_a, world_hex.z ],
 	                 _grid[# hex_b, world_hex.x ], _grid[# hex_b, world_hex.y ], _grid[# hex_b, world_hex.z ],
@@ -7,10 +12,6 @@ var _x = _result[0];
 var _y = _result[1] + obj_world.world_relief*_height;
 var _z = _result[2];
 */
-var _grid         = obj_world.world_hex_grid;
-var _model_scale  = obj_world.world_model_scale;
-var _scale        = obj_world.world_scale*( 1 + obj_world.world_relief*_grid[# hex_a, world_hex.test ] );
-var _world_matrix = obj_world.matrix;
 
 var _x = _grid[# hex_a, world_hex.x ];
 var _y = _grid[# hex_a, world_hex.y ];
@@ -23,7 +24,7 @@ var _theta = darccos( _y / _r );
 var _a_sin = dsin( z_rotation );
 var _a_cos = dcos( z_rotation );
 var _t_sin = dsin( _theta );
-var _t_cos = dcos( _theta );
+var _t_cos = _y / _r; //dcos( _theta );
 var _p_sin = dsin( _phi );
 var _p_cos = dcos( _phi );
 
