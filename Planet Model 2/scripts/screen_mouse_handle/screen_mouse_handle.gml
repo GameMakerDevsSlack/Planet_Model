@@ -40,7 +40,7 @@ if ( mouse_sample ) {
 
 	if ( surface_exists( srf_mouse ) ) {
 		
-		if ( os_browser == browser_not_a_browser ) {
+		if ( !global.on_browser ) {
 			var _pixel = surface_getpixel( srf_mouse, mouse_get_x(), surface_get_height( application_surface )-mouse_get_y() );
 		} else {
 			var _pixel = surface_getpixel( srf_mouse, mouse_get_x(), mouse_get_y() );

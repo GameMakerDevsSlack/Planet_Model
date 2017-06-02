@@ -16,5 +16,5 @@ world_tile_all_multiply( world_hex.test, 1/world_tile_all_find_max( world_hex.te
 world_tile_all_clamp( world_hex.test, 0.33, 1 );
 world_tile_all_add( world_hex.test, -0.33 );
 world_tile_all_multiply( world_hex.test, 1/(1-0.33) );
-for( var _i = 0; _i < world_hex_grid_count; _i++ ) world_hex_grid[# _i, world_hex.test ] = ( ( 5*world_hex_grid[# _i, world_hex.test ] ) div 1 )/5;
+for( var _i = 0; _i < world_hex_grid_count; _i++ ) world_hex_grid[# _i, world_hex.test ] = floor( 5*world_hex_grid[# _i, world_hex.test ] )/5;
 world_tile_set_edges();

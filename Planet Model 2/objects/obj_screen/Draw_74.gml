@@ -3,7 +3,7 @@ var _y_scale = display_get_gui_height()/camera_get_view_height( camera_get_activ
 
 if ( global.do_mouse ) {
 	
-	if ( os_browser == browser_not_a_browser ) {
+	if ( !global.on_browser ) {
 		draw_surface_ext( srf_mouse, 0, display_get_gui_height(), 1, -1, 0, c_white, 1 );
 	} else {
 		draw_surface_ext( srf_mouse, 0, 0, 1, 1, 0, c_white, 1 );

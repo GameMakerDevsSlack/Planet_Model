@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "06c31a17-8be3-4d61-870d-7f35ec622986",
+            "Value": {
+                "id": "01562fd6-6b1f-4a0c-94e9-f5d4d1738f64",
+                "resourcePath": "datafiles_yy\\bird.obj.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "089e2841-ca88-4aaa-854c-a64fd10454c6",
             "Value": {
                 "id": "7d86b04a-4038-4b01-b2ab-26036883f8cc",
@@ -407,6 +415,14 @@
             }
         },
         {
+            "Key": "5d259544-546f-467b-b065-dfde9af85405",
+            "Value": {
+                "id": "34eb0b77-a137-4c58-8a32-6a2236f7df66",
+                "resourcePath": "datafiles_yy\\boat.obj.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "5d3f6062-427f-4a1a-9cdb-c2468f418bf6",
             "Value": {
                 "id": "d42bb351-8f18-4bba-986a-1fdc3a1484cc",
@@ -484,14 +500,6 @@
                 "id": "98a9a4e7-9279-48cf-897b-6fbc47fadf2d",
                 "resourcePath": "scripts\\world_tile_set_edges\\world_tile_set_edges.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "6f3f8cdd-329a-4acc-a4a6-e83cd885301f",
-            "Value": {
-                "id": "050ed9d5-3210-4e0b-857d-28fad867a185",
-                "resourcePath": "datafiles_yy\\boat.obj.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {

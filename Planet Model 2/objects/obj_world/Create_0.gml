@@ -1,4 +1,4 @@
-world_define( 6, 300, 0.13, 1.7 );
+world_define( 6, 300, 0.16, 1.7 );
 //world_define( 7, 300, 0.13, 1 );
 world_generate();
 
