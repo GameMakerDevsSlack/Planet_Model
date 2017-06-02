@@ -3,11 +3,14 @@ if ( keyboard_check_pressed( vk_f4 ) ) {
 	display_set_gui_maximise();
 }
 
-if ( surface_get_width( application_surface ) != display_get_gui_width() ) or ( surface_get_height( application_surface ) != display_get_gui_height() ) {
+global.app_surf_width = surface_get_width( application_surface );
+global.app_surf_height = surface_get_height( application_surface );
+
+if ( global.app_surf_width != display_get_gui_width() ) or ( global.app_surf_height != display_get_gui_height() ) {
 	surface_resize( application_surface, display_get_gui_width(), display_get_gui_height() );
 }
 
 gpu_set_ztestenable( true );
 gpu_set_zwriteenable( true );
 
-handle_mouse();
+screen_mouse_handle();

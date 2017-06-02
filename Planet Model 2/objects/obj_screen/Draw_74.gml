@@ -1,7 +1,7 @@
 var _x_scale = display_get_gui_width()/camera_get_view_width( camera_get_active() );
 var _y_scale = display_get_gui_height()/camera_get_view_height( camera_get_active() );
 
-if ( do_mouse ) {
+if ( global.do_mouse ) {
 	
 	if ( os_browser == browser_not_a_browser ) {
 		draw_surface_ext( srf_mouse, 0, display_get_gui_height(), 1, -1, 0, c_white, 1 );
@@ -9,7 +9,7 @@ if ( do_mouse ) {
 		draw_surface_ext( srf_mouse, 0, 0, 1, 1, 0, c_white, 1 );
 	}
 	
-} else if ( do_fxaa ) {
+} else if ( global.do_fxaa ) {
 	
 	shader_set( shd_fxaa );
 	var _texture = surface_get_texture( application_surface );

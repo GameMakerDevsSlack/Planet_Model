@@ -18,8 +18,8 @@ if ( do_debug ) {
 	with( obj_screen ) _str += "\nmouse=" + string( mouse_d_x - mouse_d_pre_x ) + "," + string( mouse_d_y - mouse_d_pre_y );
 	
 	_str += "\n";
-	if ( obj_screen.do_lighting ) _str += "\nLighting";
-	if ( obj_screen.do_fxaa     ) _str += "\nFXAA";
+	if ( global.do_lighting ) _str += "\nLighting";
+	if ( global.do_fxaa     ) _str += "\nFXAA";
 	
 	draw_set_colour( c_white );
 	draw_set_font( fnt_default );
@@ -45,6 +45,7 @@ if ( do_debug ) {
 	}
 	
 	var _str = string( fps ) + " | " + string( floor( fps_real ) );
+	_str += "\n\n" + string( obj_screen.mouse_scroll_pos );
 	draw_set_alpha( 1 );
 	draw_set_halign( fa_center );
 	draw_set_color( c_black );

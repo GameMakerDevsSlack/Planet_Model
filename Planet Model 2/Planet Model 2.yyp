@@ -114,7 +114,7 @@
             "Key": "2054e99b-7113-410a-96c9-932d8c2f92be",
             "Value": {
                 "id": "3e3672d6-5b83-487d-bcfe-4ed68bc92d9c",
-                "resourcePath": "scripts\\collect_mouse\\collect_mouse.yy",
+                "resourcePath": "scripts\\screen_mouse_collect\\screen_mouse_collect.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -306,7 +306,7 @@
             "Key": "479d8c9e-0cef-454d-8206-bb34eb18b687",
             "Value": {
                 "id": "6c9c68c9-8cac-4d21-8a83-69b34dbcfa48",
-                "resourcePath": "scripts\\handle_mouse\\handle_mouse.yy",
+                "resourcePath": "scripts\\screen_mouse_handle\\screen_mouse_handle.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -711,6 +711,14 @@
             }
         },
         {
+            "Key": "afceb942-15bf-4e09-8f22-a290bd0ac412",
+            "Value": {
+                "id": "c25fdb44-3d83-4147-a80a-9f94a59beaf1",
+                "resourcePath": "scripts\\device_multitouch\\device_multitouch.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b1a81abb-6e49-4430-843b-eaae69772799",
             "Value": {
                 "id": "1ed63125-4e1d-4650-9259-b2c9df4012c4",
@@ -1060,8 +1068,9 @@
         "f0fa38ae-6356-4ec2-98cc-36b2d26acbd2",
         "8e76da2c-ddf5-48b4-9b73-2f3aa3fd29b1",
         "479d8c9e-0cef-454d-8206-bb34eb18b687",
-        "08c29ab7-be1c-40b0-8147-59d1cea4f97d",
-        "2054e99b-7113-410a-96c9-932d8c2f92be"
+        "2054e99b-7113-410a-96c9-932d8c2f92be",
+        "afceb942-15bf-4e09-8f22-a290bd0ac412",
+        "08c29ab7-be1c-40b0-8147-59d1cea4f97d"
     ],
     "tutorial": ""
 }

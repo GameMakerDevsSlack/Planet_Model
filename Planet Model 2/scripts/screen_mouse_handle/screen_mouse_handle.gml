@@ -2,6 +2,17 @@ if ( mouse_check_button_pressed( mb_left ) ) mouse_pressed = true;
 if ( mouse_check_button_released( mb_left ) ) mouse_released = true;
 mouse_down = mouse_check_button( mb_left );
 
+if ( device_multitouch() ) or ( keyboard_check( vk_control ) ) {
+	var _y = mouse_get_y();
+	if ( mouse_scroll_pos < 0 ) mouse_scroll = 0 else mouse_scroll = (_y - mouse_scroll_pos)/60;
+	mouse_scroll_pos = _y;
+} else {
+	mouse_scroll_pos = noone;
+	mouse_scroll = 0;
+	if ( mouse_wheel_up()   ) mouse_scroll = -1;
+	if ( mouse_wheel_down() ) mouse_scroll =  1;
+}
+
 if ( mouse_collect ) {
 	mouse_collect = false;
 	mouse_sample = true;
@@ -48,15 +59,18 @@ if ( mouse_sample ) {
 	}
 	
 	if ( mouse_pressed ) {
-			
+		
 		mouse_p_hex  = _hex;
 		mouse_p_inst = _inst;
+		mouse_p_x = mouse_get_x();
+		mouse_p_y = mouse_get_y();
 		mouse_d_pre_x = mouse_get_x();
 		mouse_d_pre_y = mouse_get_y();
-		mouse_d_x = mouse_d_pre_x;
-		mouse_d_y = mouse_d_pre_y;
+		mouse_d_x = mouse_get_x();
+		mouse_d_y = mouse_get_y();
 		mouse_pressed = false;
-			
+		mouse_moved = false;
+		
 	} else if ( mouse_released ) {
 			
 		mouse_r_hex  = _hex;
@@ -66,9 +80,21 @@ if ( mouse_sample ) {
 		mouse_d_x = noone;
 		mouse_d_y = noone;
 		mouse_released = false;
-			
+		
+		if ( !mouse_moved ) {
+			if ( mouse_r_inst != noone ) and ( mouse_r_inst != global.selected_inst ) and ( mouse_p_inst == mouse_r_inst ) {
+				global.selected_inst = mouse_r_inst;
+			} else {
+				global.selected_inst = noone;
+			}
+		}
+		
 	}
 	
 	mouse_sample = false;
 	
+}
+
+if ( !mouse_collect ) {
+	if ( point_distance( mouse_p_x, mouse_p_y, mouse_d_x, mouse_d_y ) > 10 ) mouse_moved = true;
 }

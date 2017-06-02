@@ -1,8 +1,8 @@
 {
-    "id": "479d8c9e-0cef-454d-8206-bb34eb18b687",
+    "id": "2054e99b-7113-410a-96c9-932d8c2f92be",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "handle_mouse",
+    "name": "screen_mouse_collect",
     "IsCompatibility": false,
     "IsDnD": false
 }

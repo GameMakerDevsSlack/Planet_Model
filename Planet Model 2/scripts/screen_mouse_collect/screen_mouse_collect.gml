@@ -1,8 +1,6 @@
-var _app_w = surface_get_width( application_surface );
-var _app_h = surface_get_height( application_surface );
-	
-if ( !surface_exists( srf_mouse ) ) or ( surface_get_width( srf_mouse ) != _app_w ) or ( surface_get_height( srf_mouse ) != _app_h ) {
-	srf_mouse = surface_create( _app_w, _app_h );
+if ( !surface_exists( srf_mouse ) ) or ( surface_get_width( srf_mouse ) != global.app_surf_width ) or ( surface_get_height( srf_mouse ) != global.app_surf_height ) {
+	surface_free( srf_mouse );
+	srf_mouse = surface_create( global.app_surf_width, global.app_surf_height );
 }
 	
 if ( surface_exists( srf_mouse ) ) {
