@@ -18,5 +18,6 @@ if ( global.app_surf_width != display_get_gui_width() ) or ( global.app_surf_hei
 
 gpu_set_ztestenable( true );
 gpu_set_zwriteenable( true );
+gpu_set_cullmode( cull_clockwise );
 
 screen_mouse_handle();

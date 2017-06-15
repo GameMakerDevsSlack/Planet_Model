@@ -55,14 +55,6 @@
             }
         },
         {
-            "Key": "06c31a17-8be3-4d61-870d-7f35ec622986",
-            "Value": {
-                "id": "01562fd6-6b1f-4a0c-94e9-f5d4d1738f64",
-                "resourcePath": "datafiles_yy\\bird.obj.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "089e2841-ca88-4aaa-854c-a64fd10454c6",
             "Value": {
                 "id": "7d86b04a-4038-4b01-b2ab-26036883f8cc",
@@ -367,6 +359,14 @@
             }
         },
         {
+            "Key": "4f3ecf0d-9979-4070-95bf-742e935b5429",
+            "Value": {
+                "id": "bd73ab8a-0977-4e2a-b9b1-5e1350da01dd",
+                "resourcePath": "datafiles_yy\\boat.obj.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "536a8597-63c3-4705-aa99-a9f9a11960fd",
             "Value": {
                 "id": "2022f81f-7134-4690-969b-6ff5d7a3b00e",
@@ -415,27 +415,11 @@
             }
         },
         {
-            "Key": "5d259544-546f-467b-b065-dfde9af85405",
-            "Value": {
-                "id": "34eb0b77-a137-4c58-8a32-6a2236f7df66",
-                "resourcePath": "datafiles_yy\\boat.obj.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "5d3f6062-427f-4a1a-9cdb-c2468f418bf6",
             "Value": {
                 "id": "d42bb351-8f18-4bba-986a-1fdc3a1484cc",
                 "resourcePath": "views\\5d3f6062-427f-4a1a-9cdb-c2468f418bf6.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "60587913-88c9-4c18-ac24-03a3a2f009fd",
-            "Value": {
-                "id": "260e9209-e1ec-4e8f-a9ed-09c6a33d3f3b",
-                "resourcePath": "datafiles_yy\\flag.obj.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -871,6 +855,14 @@
             }
         },
         {
+            "Key": "e0d1a38a-143e-4e1e-9cb4-2083ca65aa1f",
+            "Value": {
+                "id": "360d5778-2512-4553-bd13-09b87b759f68",
+                "resourcePath": "datafiles_yy\\bird.obj.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "e0e45322-6ab9-4c86-a314-3a6de4a783e0",
             "Value": {
                 "id": "6fca7f61-f8a7-42da-87c3-b0d223d6164a",
@@ -980,6 +972,14 @@
                 "id": "6dd7d745-ef56-4c6c-b72e-1b8b9386d30c",
                 "resourcePath": "scripts\\world_hex_add\\world_hex_add.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "f9a6d7f7-8698-4de2-ad49-c42a005fbc1c",
+            "Value": {
+                "id": "945f0192-63d2-4b88-b3f3-1fd5df8bd9c0",
+                "resourcePath": "datafiles_yy\\flag.obj.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {

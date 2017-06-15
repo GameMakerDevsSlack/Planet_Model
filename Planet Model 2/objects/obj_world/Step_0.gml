@@ -17,7 +17,7 @@ if ( global.keyboard_control ) {
 	if ( !device_multitouch() ) and ( obj_screen.mouse_moved ) {
 	
 		if ( global.on_mobile ) var _k = 0.034 else var _k = 0.031;
-		if ( obj_screen.mouse_p_hex >= 0 ) or ( obj_screen.mouse_p_inst >= 0 ) {
+		if ( obj_screen.mouse_p_hex >= 0 ) {
 	
 			rot_z_speed -= _k*lerp( 0.16, 1, camera_y )*( obj_screen.mouse_d_x - obj_screen.mouse_d_pre_x );
 			rot_x_speed -= _k*lerp( 0.16, 1, camera_y )*( obj_screen.mouse_d_y - obj_screen.mouse_d_pre_y );

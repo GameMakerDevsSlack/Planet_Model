@@ -40,16 +40,16 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 		var _kz = _height*_bz_list[| _j ];
 		
 		vertex_position_3d( _vbuff,   _ox, _oy, _oz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
-		vertex_position_3d( _vbuff,   _kx, _ky, _kz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
 		vertex_position_3d( _vbuff,   _jx, _jy, _jz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
+		vertex_position_3d( _vbuff,   _kx, _ky, _kz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
 		
 		if ( _e_list[| _j ] ) {
 			
 			cross_product_normalised( _kx, _ky, _kz,   _jx, _jy, _jz );
 		
 			vertex_position_3d( _vbuff,     0,   0,   0 ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   global.return[0], global.return[1], global.return[2] );
-			vertex_position_3d( _vbuff,   _jx, _jy, _jz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   global.return[0], global.return[1], global.return[2] );
 			vertex_position_3d( _vbuff,   _kx, _ky, _kz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   global.return[0], global.return[1], global.return[2] );
+			vertex_position_3d( _vbuff,   _jx, _jy, _jz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   global.return[0], global.return[1], global.return[2] );
 			
 		}
 		

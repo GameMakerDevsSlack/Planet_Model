@@ -8,9 +8,9 @@ global.app_surf_height    = surface_get_height( application_surface );
 global.selected_inst      = noone;
 global.uni_ambient_colour = shader_get_uniform( shd_lighting, "u_vAmbientColour" );
 
-global.do_lighting        = true;
-global.do_fxaa            = !global.on_mobile;
-global.do_mouse           = false;
+global.do_lighting = true;
+global.do_fxaa     = !global.on_mobile;
+global.do_mouse    = false;
 
 global.buffer_boat      = create_buffer_from_obj(           "boat.obj",   false, false,   0, 0,1.5,  1.5 );
 global.buffer_flag      = create_buffer_from_obj(           "flag.obj",   false, false,   0, 0,  0,  6.0 );

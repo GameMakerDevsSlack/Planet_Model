@@ -19,25 +19,29 @@ if ( surface_exists( srf_mouse ) ) {
 			vertex_submit( vbf_relief, pr_trianglelist, sprite_get_texture( spr_white, 0 ) );
 		}
 		
-		var _array = [];
-		shader_set( shd_fog );
+		if ( mouse_released ) {
 			
-		var _i = 0;
-		with( obj_test_character ) {
+			var _array = [];
+			shader_set( shd_fog );
+			
+			var _i = 0;
+			with( obj_test_character ) {
 				
-			var _red   = _i mod 255;
-			var _green = _i div 255;
-			shader_set_uniform_f( shader_get_uniform( shd_fog, "u_vColour" ), _red/255, _green/255, 1/255, 1 );
+				var _red   = _i mod 255;
+				var _green = _i div 255;
+				shader_set_uniform_f( shader_get_uniform( shd_fog, "u_vColour" ), _red/255, _green/255, 1/255, 1 );
 				
-			matrix_set( matrix_world, matrix_multiply( matrix, _camera_viewproj_matrix ) );
-			vertex_submit( model, pr_trianglelist, sprite_get_texture( spr_white, 0 ) );
+				matrix_set( matrix_world, matrix_multiply( matrix, _camera_viewproj_matrix ) );
+				vertex_submit( model, pr_trianglelist, sprite_get_texture( spr_white, 0 ) );
 				
-			_array[_i] = id;
-			_i++;
+				_array[_i] = id;
+				_i++;
+			}
+			
+			shader_reset();
+			mouse_array = _array;
+			
 		}
-			
-		shader_reset();
-		mouse_array = _array;
-	
+		
 	surface_reset_target();
 }

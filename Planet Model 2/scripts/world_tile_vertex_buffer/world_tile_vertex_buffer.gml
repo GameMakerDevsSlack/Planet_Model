@@ -1,6 +1,8 @@
 var _vbuff = vertex_create_buffer();
 vertex_begin( _vbuff, world_vertex_format );
 
+var _total_triangles = 0;
+
 //Build hexes themselves
 for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
     
@@ -29,7 +31,7 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 	
 	var _size = ds_list_size( _ax_list );
     for( var _j = 0; _j < _size; _j++ ) {
-		 
+		
 		var _jx = _height*_ax_list[| _j ];
 		var _jy = _height*_ay_list[| _j ];
 		var _jz = _height*_az_list[| _j ];
@@ -38,17 +40,19 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
 		var _ky = _height*_by_list[| _j ];
 		var _kz = _height*_bz_list[| _j ];
 		
+		_total_triangles++;
 		vertex_position_3d( _vbuff,   _ox, _oy, _oz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
-		vertex_position_3d( _vbuff,   _kx, _ky, _kz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
 		vertex_position_3d( _vbuff,   _jx, _jy, _jz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
+		vertex_position_3d( _vbuff,   _kx, _ky, _kz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   _nx, _ny, _nz );
 		
 		if ( _e_list[| _j ] ) {
 			
 			cross_product_normalised( _kx, _ky, _kz,   _jx, _jy, _jz );
 		
+			_total_triangles++;
 			vertex_position_3d( _vbuff,     0,   0,   0 ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   global.return[0], global.return[1], global.return[2] );
-			vertex_position_3d( _vbuff,   _jx, _jy, _jz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   global.return[0], global.return[1], global.return[2] );
 			vertex_position_3d( _vbuff,   _kx, _ky, _kz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   global.return[0], global.return[1], global.return[2] );
+			vertex_position_3d( _vbuff,   _jx, _jy, _jz ); vertex_colour( _vbuff,   _colour, 1 ); vertex_texcoord( _vbuff, 0.5, 0.5 ); vertex_normal( _vbuff,   global.return[0], global.return[1], global.return[2] );
 			
 		}
 		
@@ -56,6 +60,7 @@ for( var _i = 0; _i < world_hex_grid_count; _i++ ) {
     
 }
 
+show_message( string( _total_triangles ) + "," + string( vertex_get_buffer_size( _vbuff ) ) );
 
 //Build foliage
 for( var _i = 0; _i < world_hex_grid_count; _i++ ) {

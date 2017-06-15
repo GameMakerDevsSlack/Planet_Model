@@ -1,5 +1,5 @@
 {
-    "id": "06c31a17-8be3-4d61-870d-7f35ec622986",
+    "id": "e0d1a38a-143e-4e1e-9cb4-2083ca65aa1f",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "bird.obj",

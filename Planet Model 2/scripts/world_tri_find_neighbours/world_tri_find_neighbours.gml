@@ -111,4 +111,4 @@ for( var _i = 0; _i < 9; _i++ ) {
 }
 
 //Error handling. Heaven forfend we get down here during normal operation
-show_error( "Assignment error? 'result < 3' for " + string( _current ) + " (child of " + string( ds_list_find_value( lst_tri_parent, current ) ) + "). " + string( a_found ) + "," + string( b_found ) + "," + string( c_found ), false );
+show_error( "Assignment error? 'result < 3' for " + string( _current ) + " (child of " + string( world_tri_grid_b[# _current, world_tri.parent ] ) + "). " + string( _a_found ) + "," + string( _b_found ) + "," + string( _c_found ), false );
